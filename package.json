@@ -1,0 +1,53 @@
+{
+  "name": "secrets-service",
+  "version": "1.0.0",
+  "description": "IntegrationOS Secrets Service",
+  "scripts": {
+    "dev": "NODE_ENV=development moleculer-runner --repl --hot services",
+    "start": "moleculer-runner services",
+    "cli": "moleculer connect NATS",
+    "ci": "jest --watch",
+    "test": "jest --coverage --detectOpenHandles",
+    "lint": "eslint services",
+    "dc:up": "docker-compose up --build -d",
+    "dc:down": "docker-compose down"
+  },
+  "keywords": [
+    "microservices",
+    "moleculer",
+    "secrets"
+  ],
+  "author": "@IntegrationOS",
+  "devDependencies": {
+    "eslint": "^8.6.0",
+    "jest": "^27.4.7",
+    "jest-cli": "^27.4.7",
+    "moleculer-repl": "^0.7.0"
+  },
+  "dependencies": {
+    "@buildable/tools": "^1.0.7",
+    "@google-cloud/kms": "^4.2.0",
+    "axios": "^0.20.0",
+    "dotenv": "^9.0.2",
+    "lodash": "^4.17.20",
+    "moleculer": "^0.14.3",
+    "moleculer-cron": "0.0.2",
+    "moleculer-db": "^0.8.2",
+    "moleculer-db-adapter-mongo": "^0.4.5",
+    "moleculer-web": "^0.10.2",
+    "mongodb": "^3.6.4",
+    "slugify": "^1.5.3",
+    "sse4_crc32": "^7.0.0",
+    "uuid": "^8.3.2"
+  },
+  "engines": {
+    "node": ">= 8.x.x"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "rootDir": "./services",
+    "roots": [
+      "../test"
+    ]
+  }
+}
