@@ -7,10 +7,10 @@ module.exports = {
   logger: true,
   logLevel: 'info',
   cacher: {
-    type: 'Memory',
+    type: 'MemoryLRU',
     options: {
-      ttl: 432000,
-      clone: true,
+      max: 50000,
+      ttl: 345600,
     },
   },
   metrics: false,

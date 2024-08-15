@@ -9,10 +9,13 @@ module.exports = function (collection, dbUrl = process.env.MONGO_URI) {
     const MongoAdapter = require('moleculer-db-adapter-mongo');
     return {
       mixins: [DbService],
-      adapter: new MongoAdapter(dbUrl),
+      adapter: new MongoAdapter(dbUrl, {
+        useUnifiedTopology: true,
+      }),
       collection,
     };
   }
+
   // Create data folder
   mkdir(path.resolve('./data'));
   return {
